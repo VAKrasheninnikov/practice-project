@@ -26,7 +26,7 @@
 .linkWrapper {
     display: flex;
     align-items: stretch;
-    gap:10px;
+    gap: 10px;
 }
 
 .icon {
@@ -35,7 +35,7 @@
 
 .link {
     opacity: 1;
-    transition: .2s opacity;
+    transition: 0.2s opacity;
 }
 
 .collapsedBtn {
@@ -52,15 +52,19 @@
 
 .size_m {
     @extend .size;
+
     right: calc(var(--font-line-m) * -1);
 }
+
 .size_l {
     @extend .size;
+
     right: calc(var(--font-line-l) * -1);
 }
 
 .size_xl {
     @extend .size;
+
     right: calc(var(--font-line-xl) * -1);
 }
 
@@ -74,7 +78,7 @@
 
     .link {
         opacity: 0;
-        transition: .1s opacity;
+        transition: 0.1s opacity;
         width: 0;
     }
 }
