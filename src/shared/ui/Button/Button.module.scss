@@ -54,6 +54,11 @@
     border: none;
 }
 
+.clear_inverted {
+    @extend .clear;
+    color: var(--inverted-primary-color);
+}
+
 .background_inverted {
     background: var(--inverted-bg-color);
     color: var(--inverted-primary-color);
