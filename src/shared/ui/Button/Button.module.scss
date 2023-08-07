@@ -56,6 +56,7 @@
 
 .clear_inverted {
     @extend .clear;
+
     color: var(--inverted-primary-color);
 }
 
