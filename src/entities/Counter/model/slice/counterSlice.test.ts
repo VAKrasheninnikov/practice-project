@@ -9,11 +9,11 @@ describe('counterSlice', () => {
         expect(counterReducer(state, counterActions.decrement)).toEqual({ value: 4 });
     });
 
-    test('reducer decrements', () => {
+    test('reducer increments', () => {
         const state: CounterSchema = {
             value: 5,
         };
-        expect(counterReducer(state, counterActions.increment)).toEqual({ value: 7 });
+        expect(counterReducer(state, counterActions.increment)).toEqual({ value: 6 });
     });
 
     test('with empty state', () => {
