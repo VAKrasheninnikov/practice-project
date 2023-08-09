@@ -11,6 +11,7 @@ export default {
     coveragePathIgnorePatterns: [
         '\\\\node_modules\\\\',
     ],
+
     moduleFileExtensions: [
         'js',
         'jsx',
@@ -19,6 +20,9 @@ export default {
         'json',
         'node',
     ],
+    globals: {
+        __IS_DEV__: true,
+    },
     moduleDirectories: ['node_modules', 'src'],
     modulePaths: ['<rootDir>'],
     rootDir: '../../',

@@ -28,6 +28,7 @@ module.exports = {
         'react/jsx-indent-props': [2, 4],
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
+        'no-param-reassign': 'off',
         indent: [2, 4],
         'react/jsx-filename-extension': [
             2,
