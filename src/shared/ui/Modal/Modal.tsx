@@ -8,6 +8,7 @@ import cls from './Modal.module.scss';
 interface ModalProps {
     className?: string;
     isOpen?: boolean;
+    lazy?: boolean;
     onClose?: () => void;
     children?: ReactNode;
 }
@@ -16,10 +17,11 @@ const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
     const {
-        className, children, onClose, isOpen,
+        className, children, onClose, isOpen, lazy,
     } = props;
 
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     const timeout = useRef<ReturnType<typeof setTimeout>>(null);
 
@@ -53,10 +55,20 @@ export const Modal = (props: ModalProps) => {
         };
     }, [isOpen, closeHandler]);
 
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
     const mods: Record<string, boolean> = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal element={document.body}>

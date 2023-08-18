@@ -5,6 +5,7 @@ import { Counter } from './Counter';
 describe('Counter', () => {
     test('with only first param', () => {
         const initialState = {
+            user: {},
             counter: {
                 value: 3,
             },
@@ -15,6 +16,7 @@ describe('Counter', () => {
 
     test('increments', () => {
         const initialState = {
+            user: {},
             counter: {
                 value: 3,
             },
@@ -29,6 +31,7 @@ describe('Counter', () => {
 
     test('decrements', () => {
         const initialState = {
+            user: {},
             counter: {
                 value: 3,
             },
