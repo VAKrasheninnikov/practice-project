@@ -26,10 +26,7 @@ export default {
     moduleDirectories: ['node_modules', 'src'],
     modulePaths: ['<rootDir>'],
     rootDir: '../../',
-    testMatch: [
-        // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-    ],
+    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',

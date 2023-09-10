@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+.disabled {
+   opacity: .5;
+}
+
 .size_m {
     font: var(--font-m);
 }
