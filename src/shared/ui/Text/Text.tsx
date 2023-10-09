@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './Text.module.scss';
+import { classNames } from "shared/lib/classNames/classNames";
+import cls from "./Text.module.scss";
 
 export enum TextTheme {
-    PRIMARY = 'primary',
-    ERROR = 'error'
+    PRIMARY = "primary",
+    ERROR = "error"
 }
 
 interface TextProps {

@@ -1,9 +1,9 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from "shared/lib/classNames/classNames";
 import React, {
     ReactNode, useEffect, useRef, useState, useCallback,
-} from 'react';
-import { Portal } from 'shared/ui/Portal/Portal';
-import cls from './Modal.module.scss';
+} from "react";
+import { Portal } from "shared/ui/Portal/Portal";
+import cls from "./Modal.module.scss";
 
 interface ModalProps {
     className?: string;
@@ -41,17 +41,17 @@ export const Modal = (props: ModalProps) => {
 
     useEffect(() => {
         const onKeyDown = (event: CustomEvent) => {
-            if ((event as unknown as React.KeyboardEvent).key === 'Escape') {
+            if ((event as unknown as React.KeyboardEvent).key === "Escape") {
                 closeHandler();
             }
         };
 
         if (isOpen) {
-            window.addEventListener('keydown', onKeyDown);
+            window.addEventListener("keydown", onKeyDown);
         }
         return () => {
             clearTimeout(timeout.current);
-            window.removeEventListener('keydown', onKeyDown);
+            window.removeEventListener("keydown", onKeyDown);
         };
     }, [isOpen, closeHandler]);
 

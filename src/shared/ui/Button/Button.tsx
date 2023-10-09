@@ -1,19 +1,19 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ButtonHTMLAttributes, FC } from 'react';
-import cls from './Button.module.scss';
+import { classNames } from "shared/lib/classNames/classNames";
+import { ButtonHTMLAttributes, FC } from "react";
+import cls from "./Button.module.scss";
 
 export enum ThemeButton {
-    CLEAR = 'clear',
-    CLEAR_INVERTED = 'clear_inverted',
-    OUTLINE = 'outline',
-    BACKGROUND = 'background',
-    BACKGROUND_INVERTED = 'background_inverted'
+    CLEAR = "clear",
+    CLEAR_INVERTED = "clear_inverted",
+    OUTLINE = "outline",
+    BACKGROUND = "background",
+    BACKGROUND_INVERTED = "background_inverted"
 }
 
 export enum ButtonSize {
-    M = 'size_m',
-    L = 'size_l',
-    XL = 'size_xl',
+    M = "size_m",
+    L = "size_l",
+    XL = "size_xl",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

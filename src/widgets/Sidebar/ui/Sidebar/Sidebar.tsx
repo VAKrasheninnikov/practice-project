@@ -1,14 +1,14 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useState } from 'react';
-import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
-import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
-import { Button, ButtonSize, ThemeButton } from 'shared/ui/Button/Button';
-import { useTranslation } from 'react-i18next';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import AboutIcon from 'shared/assets/icons/about-20-20.svg';
-import MainIcon from 'shared/assets/icons/main-20-20.svg';
-import cls from './Sidebar.module.scss';
+import { classNames } from "shared/lib/classNames/classNames";
+import { useState } from "react";
+import { ThemeSwitcher } from "shared/ui/ThemeSwitcher";
+import { LangSwitcher } from "shared/ui/LangSwitcher/LangSwitcher";
+import { Button, ButtonSize, ThemeButton } from "shared/ui/Button/Button";
+import { useTranslation } from "react-i18next";
+import { AppLink, AppLinkTheme } from "shared/ui/AppLink/AppLink";
+import { RoutePath } from "shared/config/routeConfig/routeConfig";
+import AboutIcon from "shared/assets/icons/about-20-20.svg";
+import MainIcon from "shared/assets/icons/main-20-20.svg";
+import cls from "./Sidebar.module.scss";
 
 interface SidebarProps {
     className?: string;
@@ -35,7 +35,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 className={cls[ButtonSize.L]}
                 theme={ThemeButton.BACKGROUND_INVERTED}
             >
-                {collapsed ? '>' : '<'}
+                {collapsed ? ">" : "<"}
             </Button>
             <div className={cls.links}>
                 <AppLink
@@ -45,7 +45,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     <div className={cls.icon}>
                         <MainIcon />
                     </div>
-                    <span className={cls.link}>{t('Главная')}</span>
+                    <span className={cls.link}>{t("Главная")}</span>
                 </AppLink>
                 <AppLink
                     theme={AppLinkTheme.SECONDARY}
@@ -54,7 +54,7 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     <div className={cls.icon}>
                         <AboutIcon />
                     </div>
-                    <span className={cls.link}>{t('О сайте')}</span>
+                    <span className={cls.link}>{t("О сайте")}</span>
                 </AppLink>
             </div>
             <div className={cls.switchers}>

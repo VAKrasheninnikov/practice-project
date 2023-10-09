@@ -1,9 +1,9 @@
-import { getCounterValue } from 'entities/Counter/model/selectors/getCounterValue/getCounterValue';
-import { DeepPartial } from '@reduxjs/toolkit';
-import { StateSchema } from 'app/providers/StoreProvider';
+import { getCounterValue } from "entities/Counter/model/selectors/getCounterValue/getCounterValue";
+import { DeepPartial } from "@reduxjs/toolkit";
+import { StateSchema } from "app/providers/StoreProvider";
 
-describe('getCounterValue', () => {
-    test('getCounterValue returns value', () => {
+describe("getCounterValue", () => {
+    test("getCounterValue returns value", () => {
         const state: DeepPartial<StateSchema> = {
             counter: {
                 value: 5,

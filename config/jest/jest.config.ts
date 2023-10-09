@@ -3,36 +3,36 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from 'path';
+import path from "path";
 
 export default {
     clearMocks: true,
-    testEnvironment: 'jsdom',
+    testEnvironment: "jsdom",
     coveragePathIgnorePatterns: [
-        '\\\\node_modules\\\\',
+        "\\\\node_modules\\\\",
     ],
 
     moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
+        "js",
+        "jsx",
+        "ts",
+        "tsx",
+        "json",
+        "node",
     ],
     globals: {
         __IS_DEV__: true,
     },
-    moduleDirectories: ['node_modules', 'src'],
-    modulePaths: ['<rootDir>'],
-    rootDir: '../../',
-    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
-    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+    moduleDirectories: ["node_modules", "src"],
+    modulePaths: ["<rootDir>"],
+    rootDir: "../../",
+    testMatch: ["<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)"],
+    setupFilesAfterEnv: ["<rootDir>config/jest/setupTests.ts"],
     moduleNameMapper: {
-        '\\.s?css$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        "\\.s?css$": "identity-obj-proxy",
+        "\\.svg": path.resolve(__dirname, "jestEmptyComponent.tsx"),
     },
-    transformIgnorePatterns: ['node_modules/(?!axios)'],
+    transformIgnorePatterns: ["node_modules/(?!axios)"],
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
@@ -120,7 +120,7 @@ export default {
 
     // A list of paths to directories that Jest should use to search for files in
     roots: [
-        '<rootDir>',
+        "<rootDir>",
     ],
 
     // Allows you to use a custom runner instead of Jest's default test runner
