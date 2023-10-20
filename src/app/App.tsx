@@ -1,5 +1,5 @@
 import React, {
-    Suspense, useEffect,
+  Suspense, useEffect,
 } from "react";
 import { classNames } from "shared/lib/classNames/classNames";
 import { AppRouter } from "app/providers/router";
@@ -9,23 +9,23 @@ import { useDispatch } from "react-redux";
 import { userActions } from "entities/User";
 
 function App() {
-    const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(userActions.initAuthData());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(userActions.initAuthData());
+  }, [dispatch]);
 
-    return (
-        <div className={classNames("app", {}, [])}>
-            <Suspense fallback="">
-                <Navbar />
-                <div className="content-page">
-                    <Sidebar />
-                    <AppRouter />
-                </div>
-            </Suspense>
+  return (
+    <div className={classNames("app", {}, [])}>
+      <Suspense fallback="">
+        <Navbar />
+        <div className="content-page">
+          <Sidebar />
+          <AppRouter />
         </div>
-    );
+      </Suspense>
+    </div>
+  );
 }
 
 export default App;

@@ -14,10 +14,10 @@ interface TextProps {
 }
 
 export const Text = ({
-    className, text, title, theme = TextTheme.PRIMARY,
+  className, text, title, theme = TextTheme.PRIMARY,
 }: TextProps) => (
-    <div className={classNames(cls.Text, { [cls[theme]]: true }, [className])}>
-        {title && <p className={cls.title}>{title}</p>}
-        {text && <p className={cls.text}>{text}</p>}
-    </div>
+  <div className={classNames(cls.Text, { [cls[theme]]: true }, [className])}>
+    {title && <p className={cls.title}>{title}</p>}
+    {text && <p className={cls.text}>{text}</p>}
+  </div>
 );

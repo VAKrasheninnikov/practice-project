@@ -5,27 +5,27 @@ import { counterActions } from "../model/slice/CounterSlice";
 import { getCounterValue } from "../model/selectors/getCounterValue/getCounterValue";
 
 export const Counter = () => {
-    const dispatch = useDispatch();
-    const { t } = useTranslation();
-    const counterValue = useSelector(getCounterValue);
+  const dispatch = useDispatch();
+  const { t } = useTranslation();
+  const counterValue = useSelector(getCounterValue);
 
-    const increment = () => {
-        dispatch(counterActions.increment());
-    };
+  const increment = () => {
+    dispatch(counterActions.increment());
+  };
 
-    const decrement = () => {
-        dispatch(counterActions.decrement());
-    };
+  const decrement = () => {
+    dispatch(counterActions.decrement());
+  };
 
-    return (
-        <div>
-            <h1 data-testid="value-counter">{counterValue}</h1>
-            <Button data-testid="increment-button" onClick={increment}>
-                {t("увеличить")}
-            </Button>
-            <Button data-testid="decrement-button" onClick={decrement}>
-                {t("уменьшить")}
-            </Button>
-        </div>
-    );
+  return (
+    <div>
+      <h1 data-testid="value-counter">{counterValue}</h1>
+      <Button data-testid="increment-button" onClick={increment}>
+        {t("увеличить")}
+      </Button>
+      <Button data-testid="decrement-button" onClick={decrement}>
+        {t("уменьшить")}
+      </Button>
+    </div>
+  );
 };
