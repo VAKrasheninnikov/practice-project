@@ -8,7 +8,6 @@ import {
   getLoginError,
   getLoginIsLoading,
   getLoginPassword,
-  getLoginState,
   getLoginUsername,
 } from "features/AuthByUsername/model/selectors/getLoginState/getLoginState";
 import { Text, TextTheme } from "shared/ui/Text/Text";
@@ -16,22 +15,25 @@ import {
   DynamicModuleLoader,
   ReducersList,
 } from "shared/lib/components/DynamicModuleLoader/DynamicModuleLoader";
+import { useAppDispatch } from "shared/lib/hooks/useAppDispatch";
 import { loginByUsername } from "../../model/services/loginByUsername/loginByUsername";
 import { loginActions, loginReducer } from "../../model/slice/loginSlice";
 import cls from "./LoginForm.module.scss";
 
 interface LoginFormProps {
   className?: string;
+  onSuccess: () => void;
 }
 
-const LoginForm = memo(({ className }: LoginFormProps) => {
+const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const { t } = useTranslation();
-  const dispatch = useDispatch();
-  const loginData = useSelector(getLoginState);
+  const dispatch = useAppDispatch();
   const username = useSelector(getLoginUsername);
   const password = useSelector(getLoginPassword);
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
+
+  console.log(isLoading);
 
   const onChangeUsername = useCallback(
     (value: string) => {
@@ -47,8 +49,11 @@ const LoginForm = memo(({ className }: LoginFormProps) => {
     [dispatch]
   );
 
-  const onLoginClick = () => {
-    dispatch(loginByUsername(loginData));
+  const onLoginClick = async () => {
+    const result = await dispatch(loginByUsername({ username, password }));
+    if (result.meta.requestStatus === "fulfilled") {
+      onSuccess();
+    }
   };
 
   const initialReducers: ReducersList = {
